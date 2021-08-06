@@ -30,6 +30,7 @@ export function CategorySelect({
   closeSelectCategory,
   setCategory
  }: Props) {
+
   function handleCategorySelect(category: Category) {
     setCategory(category)
   }
