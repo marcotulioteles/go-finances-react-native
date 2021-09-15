@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react-native';
 import { ThemeProvider } from 'styled-components/native';
+import { NavigationContainer } from '@react-navigation/native';
 import theme from '../../global/Styles/theme';
 import { AuthProvider } from '../../hooks/auth';
 
@@ -9,7 +10,9 @@ import { Register } from '.';
 const Providers: React.FC = ({ children }) => (
   <ThemeProvider theme={theme}>
     <AuthProvider>
-      { children }
+      <NavigationContainer>
+        { children }
+      </NavigationContainer>
     </AuthProvider>
   </ThemeProvider>
 )
